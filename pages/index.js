@@ -1,10 +1,10 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import Image from "next/image";
+import { Inter } from "@next/font/google";
 
-const inter = Inter({ subsets: ['latin'] })
+import Link from "next/link";
 
+const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   return (
     <>
@@ -14,8 +14,35 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1>index</h1>
+      <section className="home section">
+        <div className="container">
+          <div className="row">
+            <div className="home-info padd-1">
+              <h3 className="hello">
+                Bonjour,Je suis <span className="name">Gracius Yengo </span>
+              </h3>
+              <h3 className="my-profession">
+                {" "}
+                Je suis  <span className="typing"> Web designer</span>
+              </h3>
+              <p>
+                Passionné par le numerique,en particulier le sites et
+                applications web doté d’une grande curiosité avec une capacité
+                d’adaptation ,je suis un homme très motivé pouvant travailler en
+                équipe.
+              </p>
 
+              <Link href="/contact" className="btn">
+                Me contacter
+              </Link>
+            </div>
+            <div className="home-img padd-15">
+              <span className="carre"></span>
+            <Image src="/gracius.jpg" alt="" width="350" height="400" className="img" />
+            </div>
+          </div>
+        </div>
+      </section>
     </>
-  )
+  );
 }
