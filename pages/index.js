@@ -1,11 +1,42 @@
 import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "@next/font/google";
+import { useEffect, useState } from 'react';
 
 import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
+  const texts = [' Web designer', 'Développeur web'];
+  const [displayText, setDisplayText] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTyping, setIsTyping] = useState(true);
+  const typingSpeed = 100; // Vitesse de frappe en ms
+  const pauseDuration = 2000; // Durée de pause avant de changer de texte
+
+  useEffect(() => {
+    const currentText = texts[currentIndex];
+    
+    if (isTyping) {
+      // Typage lettre par lettre
+      const interval = setInterval(() => {
+        setDisplayText(prev => prev + currentText[prev.length]);
+        
+        if (displayText.length + 1 === currentText.length) {
+          clearInterval(interval);
+          setIsTyping(false);
+          setTimeout(() => {
+            setCurrentIndex((currentIndex + 1) % texts.length);
+            setDisplayText('');
+            setIsTyping(true);
+          }, pauseDuration);
+        }
+      }, typingSpeed);
+
+      return () => clearInterval(interval);
+    }
+  }, [isTyping, currentIndex, displayText]);
+
   return (
     <>
       <Head>
@@ -23,7 +54,7 @@ export default function Home() {
               </h3>
               <h3 className="my-profession">
                 {" "}
-                Je suis  <span className="typing"> Web designer</span>
+                Je suis  <span className="typing"> {displayText}</span>
               </h3>
               <p>
                 Passionné par le numerique,en particulier le sites et
@@ -38,7 +69,7 @@ export default function Home() {
             </div>
             <div className="home-img padd-15">
               <span className="carre"></span>
-            <Image src="/gracius.jpg" alt="" width="350" height="400" className="img" />
+            <Image src="/gracius.jpeg" alt="" width="350" height="400" className="img" />
             </div>
           </div>
         </div>

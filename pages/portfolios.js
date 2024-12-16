@@ -2,8 +2,19 @@ import React from 'react'
 
 export default function portfolios() {
   return (
-    <div>
-      <h1>portfolios</h1>
+    <section className="portofolios section">
+    <div className='container'>
+
+      <div className='row'>
+      <div className="section-title padd-15">
+          <h2>Portofolios</h2>
+        </div>
+
+      </div>
+
+
     </div>
+
+</section>
   )
 }

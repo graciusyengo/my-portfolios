@@ -2,8 +2,21 @@ import React from 'react'
 
 export default function contact() {
   return (
-    <div>
-      <h1>contact</h1>
-    </div>
+    
+    <section className="contact section">
+      <div className='container'>
+
+        <div className='row'>
+        <div className="section-title padd-15">
+            <h2>Me Contacter</h2>
+          </div>
+
+        </div>
+
+
+      </div>
+
+  </section>
+
   )
 }

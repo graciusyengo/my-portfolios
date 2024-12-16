@@ -13,7 +13,15 @@ import {
   faBriefcase,
 } from "@fortawesome/free-solid-svg-icons";
 
+import { useRouter } from 'next/router';
+
 export default function App({ Component, pageProps }) {
+
+  const router = useRouter(); // Récupère la route active
+
+  const isActive = (path) => router.pathname === path;
+
+  
   return (
     <div className="main-contenaire">
       <div className="aside">
@@ -27,17 +35,19 @@ export default function App({ Component, pageProps }) {
 
         <ul className="nav">
           <li>
-            <Link href="/" className="active">
+            <Link href="/" className={isActive('/') ? 'active' : ''}>
               {" "}
               <FontAwesomeIcon
                 icon={faHome}
                 style={{ fontSize: 16,marginRight:15  }}
-              />{" "}
+              />
+
+              
               Accueil
             </Link>
           </li>
           <li>
-            <Link href="/about" >
+            <Link href="/about"   className={isActive('/about') ? 'active' : ''} >
               <FontAwesomeIcon
                 icon={faUser}
                 style={{ fontSize: 16,marginRight:15 }}
@@ -46,7 +56,7 @@ export default function App({ Component, pageProps }) {
             </Link>
           </li>
           <li>
-            <Link href="/service">
+            <Link href="/service"  className={isActive('/service') ? 'active' : ''}>
               <FontAwesomeIcon
                 icon={faList}
                 style={{ fontSize: 16, marginRight:15 }}
@@ -55,7 +65,7 @@ export default function App({ Component, pageProps }) {
             </Link>
           </li>
           <li>
-            <Link href="/portfolios">
+            <Link href="/portfolios"  className={isActive('/portfolios') ? 'active' : ''}>
               <FontAwesomeIcon
                 icon={faBriefcase}
                 style={{ fontSize: 16, marginRight:15  }}
@@ -64,7 +74,7 @@ export default function App({ Component, pageProps }) {
             </Link>
           </li>
           <li>
-            <Link href="/contact">
+            <Link href="/contact" className={isActive('/contact') ? 'active' : ''}>
               <FontAwesomeIcon
                 icon={faComments}
                 style={{ fontSize: 16,marginRight:15 }}
@@ -76,9 +86,6 @@ export default function App({ Component, pageProps }) {
       </div>
       <div className="main-content">
       <Component {...pageProps} />
-       
-
-      
       
       </div>
     </div>
