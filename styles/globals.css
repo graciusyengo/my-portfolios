@@ -528,7 +528,7 @@ button {
   .padd-15 {
     padding-left: 0 !important;
     padding-right: 0 !important;
-    display: none;
+ 
   }
   .portfolio-item, .service-item {
     flex: 0 0 100% !important;
