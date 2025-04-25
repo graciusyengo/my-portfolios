@@ -61,22 +61,35 @@ export default function About() {
                   </div>
                 </div>
               </div>
-              <div className="skills padd-15">skills
-              <div className="row">
-                <div className="skill-item">
-                  <h5> HTML</h5>
-                </div>
-                <div className="skill-item">
-                  <h5> CSS</h5>
-                </div>
-                <div className="skill-item">
-                  <h5> JAVA SCRIPT</h5>
-                </div>
-                <div className="skill-item">
-                  <h5> REACT JS</h5>
-                </div>
+              <div className="skills padd-15">
+                <h4 className="skills-title">Skills</h4>
+                <div className="row">
+                  <div className="skill-item">
+                    <h5> HTML</h5>
+                  </div>
+                  <div className="skill-item">
+                    <h5> CSS</h5>
+                  </div>
+                  <div className="skill-item">
+                    <h5> JAVA SCRIPT</h5>
+                  </div>
+                  <div className="skill-item">
+                    <h5> REACT JS</h5>
+                  </div>
+                  <div className="skill-item">
+                    <h5> NEXT JS</h5>
+                  </div>
+                  <div className="skill-item">
+                    <h5> NEST JS</h5>
+                  </div>
+                  <div className="skill-item">
+                    <h5> MYSQL</h5>
+                  </div>
+                  <div className="skill-item">
+                    <h5> MONGO DB</h5>
+                  </div>
 
-              </div>
+                </div>
 
               </div>
             </div>
