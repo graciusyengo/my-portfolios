@@ -592,8 +592,19 @@ button {
     padding: 0 1px !important;
   }
   .home .home-img .img {
-    max-width: 95vw !important;
-    width: 100% !important;
+    display: none;
+  }
+
+  .home .home-img::before{
+    display: none;
+  }
+
+  .home .home-img::after{
+    display: none;
+  }
+
+  .home .carre{
+    display: none;
   }
   .hello, .my-profession {
     font-size: 18px !important;
