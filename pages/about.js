@@ -18,14 +18,7 @@ export default function About() {
                   Je suis Gracius Yengo <span>Developpeur web </span>{" "}
                 </h3>
                 <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi
-                  quasi error ea molestiae, libero facilis, consectetur eveniet
-                  ipsum neque velit repellat vero, accusantium praesentium quod
-                  sapiente soluta quo repudiandae aut? Lorem ipsum dolor sit
-                  amet consectetur adipisicing elit. Quo illo suscipit beatae
-                  rem explicabo cum, dolorum magni iure temporibus iste
-                  blanditiis ipsa voluptatem sint nesciunt, architecto
-                  consequatur quis quisquam nemo.
+                Développeur passionné avec une expertise en développement web et mobile. Compétent dans la création de solutions robustes et intuitives, je m'efforce d'allier performance et expérience utilisateur. Mon approche analytique me permet de résoudre des problèmes complexes et d'optimiser les systèmes pour garantir une expérience fluide et efficace.
                 </p>
               </div>
             </div>
