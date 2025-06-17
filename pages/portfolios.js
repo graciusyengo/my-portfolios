@@ -9,9 +9,9 @@ const projects = [
     tags: ['React', 'Next.js', 'CSS']
   },
   {
-    title: 'Application de Gestion',
+    title: "Site de presentation d'un hopital",
     image: '/gestionapp.jpg',
-    description: "Une application web complète pour gérer des tâches, des utilisateurs et des projets en équipe.",
+    description: "J’ai conçu et développé le site web de la Clinique Promedis, un établissement médical multisites basé en RDC, pour valoriser ses services de santé auprès du public.Le site a pour objectifs :Préenter les services médicaux (consultation générale, spécialités, imagerie, etc.)Afficher les horaires de consultation et les médecins disponiblesFournir les coordonnées et localisations de chaque succursalePermettre la prise de rendez-vous en ligneRenforcer la visibilité de la marque Promedis via une interface moderne et professionnelle",
     link: 'https://gestionapp.com',
     tags: ['React', 'Node.js', 'MongoDB']
   },
