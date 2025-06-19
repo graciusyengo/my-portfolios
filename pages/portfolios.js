@@ -2,18 +2,18 @@ import React from 'react'
 
 const projects = [
   {
-    title: 'Portfolio Personnel',
-    image: '/portfolio1.jpg',
-    description: 'Un site personnel moderne présentant mon parcours, mes compétences et mes réalisations.',
+    title: 'Site pour Tdex Socimat',
+    image: '/portfolio1.png',
+    description: '',
     link: 'https://monportfolio.com',
-    tags: ['React', 'Next.js', 'CSS']
+    tags: ['React', 'CSS']
   },
   {
-    title: "Site de presentation d'un hopital",
-    image: '/gestionapp.jpg',
+    title: "Site de presentation d'une hopital",
+    image: '/pro.png',
     description: "J’ai conçu et développé le site web de la Clinique Promedis, un établissement médical multisites basé en RDC, pour valoriser ses services de santé auprès du public.Le site a pour objectifs :Préenter les services médicaux (consultation générale, spécialités, imagerie, etc.)Afficher les horaires de consultation et les médecins disponiblesFournir les coordonnées et localisations de chaque succursalePermettre la prise de rendez-vous en ligneRenforcer la visibilité de la marque Promedis via une interface moderne et professionnelle",
     link: 'https://gestionapp.com',
-    tags: ['React', 'Node.js', 'MongoDB']
+    tags: ['React', 'Sanity','CSS']
   },
   {
     title: 'Landing Page Produit',
@@ -35,7 +35,7 @@ export default function portfolios() {
         </div>
         <div className="row">
           {projects.map((project, idx) => (
-            <div className="portfolio-item padd-15" key={idx} style={{flex: '0 0 33.333%', maxWidth: '33.333%'}}>
+            <div className="portfolio-item padd-15" key={idx} style={{flex: '0 0 33.333%', maxWidth: '33.333%',cursor:'pointer'}}  >
               <div className="portfolio-card">
                 <img src={project.image} alt={project.title} className="portfolio-img" style={{width: '100%', borderRadius: '8px'}} />
                 <h3 style={{margin: '12px 0 6px'}}>{project.title}</h3>
