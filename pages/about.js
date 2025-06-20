@@ -37,7 +37,7 @@ export default function About() {
                   </div>
                   <div className="info-item padd-15">
                     <p>
-                      Tel : <span>+243972479631</span>
+                      Tel : <span>+243982382176</span>
                     </p>
                   </div>
                   <div className="info-item padd-15">
@@ -55,7 +55,7 @@ export default function About() {
                 </div>
               </div>
               <div className="skills padd-15">
-                <h4 className="skills-title">Skills</h4>
+                <h4 className="skills-title">Hard Skills </h4>
                 <div className="row">
                   <div className="skill-item">
                     <h5> HTML</h5>
