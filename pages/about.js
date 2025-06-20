@@ -81,9 +81,32 @@ export default function About() {
                   <div className="skill-item">
                     <h5> MONGO DB</h5>
                   </div>
-
                 </div>
+              </div>
 
+              {/* Soft Skills Section */}
+              <div className="skills padd-15">
+                <h4 className="skills-title">Soft Skills</h4>
+                <div className="row">
+                  <div className="skill-item">
+                    <h5>Communication</h5>
+                  </div>
+                  <div className="skill-item">
+                    <h5>Travail en équipe</h5>
+                  </div>
+                  <div className="skill-item">
+                    <h5>Gestion du temps</h5>
+                  </div>
+                  <div className="skill-item">
+                    <h5>Créativité</h5>
+                  </div>
+                  <div className="skill-item">
+                    <h5>Résolution de problèmes</h5>
+                  </div>
+                  <div className="skill-item">
+                    <h5>Adaptabilité</h5>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
