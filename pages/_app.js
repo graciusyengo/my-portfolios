@@ -4,6 +4,10 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import { FaWhatsapp } from "react-icons/fa6";
+
+
 import {
   faSearch,
   faHome,
@@ -96,8 +100,62 @@ export default function App({ Component, pageProps }) {
         </ul>
       </div>
       <div className="main-content">
-      <Component {...pageProps} />
-      
+        <Component {...pageProps} />
+        {/* WhatsApp Floating Button */}
+        <a
+          href="https://wa.me/243982382176"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="whatsapp-float"
+          aria-label="Contactez-moi sur WhatsApp"
+        >
+          {/* Icône SVG officielle WhatsApp */}
+
+
+          <FaWhatsapp />
+
+        
+        </a>
+        <style jsx global>{`
+          .whatsapp-float {
+            position: fixed;
+            right: 24px;
+            bottom: 32px;
+            z-index: 10000;
+            background: #25D366;
+            color: #fff;
+            border-radius: 50%;
+            box-shadow: 0 2px 12px #8884;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            animation: whatsapp-bounce 1.2s infinite alternate;
+            transition: box-shadow 0.2s;
+          }
+          .whatsapp-float:hover {
+            box-shadow: 0 4px 24px #25D36699;
+            background: #128C7E;
+          }
+          @keyframes whatsapp-bounce {
+            0% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-10px) scale(1.1); }
+            100% { transform: translateY(0) scale(1); }
+          }
+          @media (max-width: 600px) {
+            .whatsapp-float {
+              width: 44px;
+              height: 44px;
+              bottom: 18px;
+              right: 12px;
+            }
+            .whatsapp-float span {
+              font-size: 22px !important;
+            }
+          }
+        `}</style>
       </div>
     </div>
   );

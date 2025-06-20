@@ -1,17 +1,92 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect} from 'react'
+import emailjs from '@emailjs/browser';
 
+import { ToastContainer, toast } from 'react-toastify';
+import { HiCheckCircle, HiXCircle } from 'react-icons/hi';
+import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
 export default function contact() {
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
+ 
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+
+
+
+    // EmailJS configuration
+    const SERVICE_ID = 'service_gis4vea';
+    const TEMPLATE_ID = 'template_ytb1ux4';
+
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+
+  });
+
+  useEffect(() => {
+    // Initialize EmailJS
+    try {
+      emailjs.init("Kr2nRKP_ZL81x2ck5");
+      console.log('EmailJS initialized successfully');
+    } catch (error) {
+      console.error('Error initializing EmailJS:', error);
+    }
+  }, []);
+
+  const handleChange =  (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Ici, tu pourrais envoyer les données à une API ou un service email
-    setSubmitted(true);
+    console.log('Form data submitted:', formData);
+
+    try {
+      const currentTime = new Date().toLocaleString();
+      const templateParams = {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+
+        time: currentTime
+      };
+
+      const result = await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, "Kr2nRKP_ZL81x2ck5");
+
+       // Réinitialiser le formulaire
+       setFormData({
+        name: '',
+        email: '',
+        message: '',
+     
+      });
+
+      console.log('Email sent successfully:', result);
+      toast.success('Merci pour votre demande ! Nous vous contacterons bientôt.', {
+        icon: <HiCheckCircle className="text-green-500 text-2xl" />,
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        
+      });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      toast.error("Une erreur est survenue lors de l'envoi du message. Veuillez réessayer.", {
+        icon: <HiXCircle className="text-red-500 text-2xl" />,
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
+
+    }
   };
 
   return (
@@ -35,7 +110,7 @@ export default function contact() {
                   type="text"
                   name="name"
                   placeholder="Votre nom"
-                  value={form.name}
+                  value={formData.name}
                   onChange={handleChange}
                   required
                 />
@@ -43,7 +118,7 @@ export default function contact() {
                   type="email"
                   name="email"
                   placeholder="Votre email"
-                  value={form.email}
+                  value={formData.email}
                   onChange={handleChange}
                   required
                 />
@@ -51,7 +126,7 @@ export default function contact() {
                   name="message"
                   placeholder="Votre message"
                   rows={6}
-                  value={form.message}
+                  value={formData.message}
                   onChange={handleChange}
                   required
                 />
@@ -61,6 +136,8 @@ export default function contact() {
           </div>
         </div>
       </div>
+        <ToastContainer />
     </section>
   )
 }
+

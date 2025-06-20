@@ -49,8 +49,8 @@ export default function About() {
                 </div>
                 <div className="row">
                   <div className="buttons padd-15">
-                    <Link href="#" className="btn"> Télécharger Cv</Link>
-                    <Link  href="#" className="btn hire-me"> Me Contacter</Link>
+                    <a href="/DEVELOPPEUR WEB.pdf" download className="btn">Télécharger Cv</a>
+                    <Link href="/contact" className="btn hire-me">Me Contacter</Link>
                   </div>
                 </div>
               </div>
