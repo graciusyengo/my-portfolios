@@ -14,6 +14,13 @@ const projects = [
     description: "J’ai conçu et développé le site web de la Clinique Promedis, un établissement médical multisites basé en RDC, pour valoriser ses services de santé auprès du public.Le site a pour objectifs :Préenter les services médicaux (consultation générale, spécialités, imagerie, etc.)Afficher les horaires de consultation et les médecins disponiblesFournir les coordonnées et localisations de chaque succursalePermettre la prise de rendez-vous en ligneRenforcer la visibilité de la marque Promedis via une interface moderne et professionnelle",
     link: 'https://cliniquepromedis.org/',
     tags: ['React', 'Sanity','CSS']
+  },
+  {
+    title: 'Spotify Streaming Music App',
+    image: '/spo.PNG',
+    description: "Application de streaming musical utilisant l’API Spotify. Connectez-vous à votre compte Spotify pour écouter de la musique, gérer vos playlists et découvrir de nouveaux titres directement depuis l'application.",
+    link: 'https://streaming-music-lime.vercel.app/Home',
+    tags: ['React', 'Spotify API', 'Music']
   }
 ];
 
